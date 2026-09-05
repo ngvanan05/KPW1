@@ -1,0 +1,2 @@
+Áp dụng giá điện 2 thành phần cho khách hàng dùng điện trên 200.000kWh/tháng từ 1.1.2026
+

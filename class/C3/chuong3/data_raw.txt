@@ -1,0 +1,51 @@
+DỮ LIỆU RAW MÔ PHỎNG - BÀI TẬP TIỀN XỬ LÝ VĂN BẢN CHƯƠNG 3
+
+1. Trí tuệ nhân tạo đang thay đổi cách doanh nghiệp phân tích dữ liệu. Nhiều công ty tại Việt Nam đã bắt đầu sử dụng AI, Machine Learning và NLP để dự báo doanh thu, chăm sóc khách hàng và tự động hóa báo cáo. Xem thêm tại https://digital.fpt.com/report/xu-huong-ai-2026-va-dinh-huong-chien-luoc-cho-doanh-nghiep-viet-nam-phan-1. 😊
+
+2. Theo một khảo sát mô phỏng năm 2025, khoảng 68% doanh nghiệp vừa và nhỏ cho biết họ muốn ứng dụng trí tuệ nhân tạo trong vòng 12 tháng tới. Tuy nhiên, nhiều doanh nghiệp vẫn lo ngại về chi phí, bảo mật dữ liệu và thiếu nhân sự có kỹ năng CNTT.
+
+3. Chatbot có thể trả lời câu hỏi của khách hàng 24/7, nhưng chatbot không phải lúc nào cũng hiểu đúng ngữ cảnh. Một câu trả lời nhanh chưa chắc đã là một câu trả lời chính xác!!!
+
+4. Sinh viên cần học cách thu thập, làm sạch và phân tích dữ liệu trước khi xây dựng mô hình học máy. Nếu dữ liệu đầu vào bị sai, thiếu hoặc trùng lặp thì kết quả dự đoán cũng có thể bị sai theo.
+
+5. NLP - Natural Language Processing - là lĩnh vực giúp máy tính hiểu và xử lý ngôn ngữ của con người. Các ứng dụng phổ biến gồm dịch máy, phân tích cảm xúc, tìm kiếm thông tin, tóm tắt văn bản và nhận diện giọng nói.
+
+6. Nhiều người dùng viết tắt khi bình luận trên mạng xã hội, ví dụ: "ko", "không", "dc", "được", "mik", "mình", "sp", "sản phẩm" và "ib". Khi xử lý dữ liệu, cần chuẩn hóa các từ này để mô hình hiểu tốt hơn.
+
+7. Một bài đánh giá viết rằng: "Sản phẩm dùng khá ổn, giao hàng nhanh, nhân viên tư vấn nhiệt tình :)". Một khách hàng khác lại phản hồi: "Mình ko hài lòng vì app bị lỗi, đăng nhập mãi không dc :(".
+
+8. Dữ liệu văn bản trên Internet thường chứa đường dẫn, hashtag, ký hiệu đặc biệt, số điện thoại và địa chỉ email. Ví dụ: liên hệ support@example.com hoặc truy cập www.example.org để xem hướng dẫn chi tiết.
+
+9. Các bước tiền xử lý thông thường gồm: chuyển văn bản thành chữ thường; loại bỏ URL; xóa dấu câu; xóa chữ số; tách câu; tách từ; loại bỏ stop words; chuẩn hóa từ và cuối cùng là vector hóa dữ liệu.
+
+10. Trong phân tích cảm xúc, những từ như "tuyệt vời", "hài lòng", "nhanh", "đẹp" thường thể hiện cảm xúc tích cực. Ngược lại, các từ "tệ", "chậm", "lỗi", "thất vọng" thường thể hiện cảm xúc tiêu cực.
+
+11. Dữ liệu có thể được thu thập từ website, diễn đàn, email hoặc mạng xã hội. Tuy nhiên, người thực hiện cần tôn trọng quyền riêng tư và không nên thu thập thông tin cá nhân nhạy cảm của người dùng.
+
+12. Một số lỗi chính tả thường gặp trong dữ liệu tiếng Việt là: "sử dụng" viết thành "sữ dụng", "trải nghiệm" viết thành "trãi nghiệm", "xử lý" viết thành "sữ lý" và "hiệu quả" viết thành "hiêu quả".
+
+13. Ví dụ về văn bản có nhiều ký tự đặc biệt: AI!!! @DataMining #NLP $100 2025/09/18 -- học máy & khai phá dữ liệu. Những ký tự này cần được xử lý tùy theo mục tiêu của bài toán.
+
+14. Một hệ thống tìm kiếm cần xác định tài liệu nào liên quan nhất đến truy vấn của người dùng. Google, Bing và các công cụ tìm kiếm khác đều sử dụng nhiều kỹ thuật của Information Retrieval.
+
+15. Mô hình phân loại văn bản có thể dùng để phát hiện thư rác, phân loại tin tức, nhận diện chủ đề hoặc dự đoán cảm xúc của khách hàng. Độ chính xác của mô hình phụ thuộc nhiều vào chất lượng dữ liệu huấn luyện.
+
+16. Hôm nay thời tiết ở Đà Nẵng khá đẹp, nhưng dữ liệu dự báo lúc 08:30 có thể thay đổi theo từng giờ. Khi phân tích dữ liệu thời gian, cần chú ý đến định dạng ngày tháng, múi giờ và các giá trị bị thiếu.
+
+17. Một số bài đăng có nội dung như sau: "Món ăn ngon quá :D", "Dịch vụ chậm quá :(" và "Bạn xem thông tin này chưa? https://example.com/review?id=12345". Đây là các trường hợp phù hợp để kiểm tra emoji, emoticon và URL.
+
+18. Doanh nghiệp muốn xây dựng một hệ thống phân tích phản hồi khách hàng tự động. Quy trình gồm thu thập dữ liệu, tiền xử lý, biểu diễn văn bản bằng vector, huấn luyện mô hình và đánh giá kết quả bằng Accuracy, Precision, Recall và F1-score.
+
+19. Stop words là những từ xuất hiện thường xuyên nhưng thường không mang nhiều ý nghĩa phân loại, chẳng hạn như "và", "là", "của", "cho", "một", "những" hoặc "các". Tuy nhiên, không nên xóa máy móc tất cả stop words nếu chúng quan trọng đối với ngữ cảnh.
+
+20. Tokenization là quá trình tách văn bản thành các đơn vị nhỏ hơn gọi là token. Ví dụ, câu "Tôi học khai phá dữ liệu" có thể được tách thành: tôi, học, khai_phá, dữ_liệu.
+
+21. Stemming thường loại bỏ hậu tố của từ, còn Lemmatization đưa từ về dạng nguyên thể dựa vào ngữ pháp. Hai kỹ thuật này giúp giảm kích thước bộ từ vựng và giảm số lượng đặc trưng.
+
+22. Word Cloud là một cách trực quan hóa dữ liệu văn bản. Những từ xuất hiện nhiều lần thường được hiển thị với kích thước lớn hơn. Tuy nhiên, Word Cloud chỉ mang tính khám phá và không thay thế cho phân tích định lượng.
+
+23. Một sinh viên nhận xét: "Bài tập này hơi khó, nhưng làm xong thì mình hiểu rõ hơn về NLP, tokenization và feature vector." Câu văn này có thể dùng để kiểm tra tách từ và phân tích cảm xúc.
+
+24. Khi lưu dữ liệu sau tiền xử lý, nên sử dụng mã hóa UTF-8 để không bị lỗi tiếng Việt. Ngoài ra, cần kiểm tra lại dữ liệu trước khi đưa vào CountVectorizer, TF-IDF hoặc mô hình học máy.
+
+25. Kết luận: tiền xử lý dữ liệu văn bản là bước quan trọng trong mọi bài toán NLP. Một quy trình tốt giúp dữ liệu nhất quán hơn, giảm nhiễu, tiết kiệm bộ nhớ và cải thiện chất lượng mô hình.

@@ -1,3 +1,5 @@
+pip install pandas numpy langdetect beautifulsoup4 emot emoji underthesea wordcloud matplotlib seaborn
+
 """Chapter 3 Vietnamese text preprocessing exercise.
 
 Run from Baitap/chuong3:
@@ -49,6 +51,8 @@ EMOTICONS = {
 }
 
 
+# === Doc du lieu dau vao ===
+
 def read_text(file_path: Path) -> str:
     """Read one non-empty UTF-8 text file."""
     if not file_path.exists():
@@ -61,7 +65,11 @@ def read_text(file_path: Path) -> str:
 
 
 def load_stopwords(file_path: Path) -> set[str]:
-    """Read one stop word per line; use a small default list when absent."""
+    """Read one stop word per line; use a small default list when absent.
+
+    Cac stop word nhieu tu duoc noi bang "_" de khop voi dinh dang token
+    cua underthesea (vd "trong_khi" thay vi "trong khi").
+    """
     if not file_path.exists():
         return DEFAULT_STOPWORDS
 
@@ -72,36 +80,48 @@ def load_stopwords(file_path: Path) -> set[str]:
     }
 
 
+# === Cac buoc chuan hoa van ban (chay truoc khi tach cau/tach tu) ===
+
 def remove_urls(text: str) -> str:
+    """Xoa link http(s):// hoac www. de khong bi coi la tu."""
     return re.sub(r"(?:https?://|www\.)\S+", " ", text, flags=re.IGNORECASE)
 
 
 def replace_emoticons(text: str) -> str:
+    """Doi cac icon go bang ky tu (":)", ":-(" ...) thanh tu mo ta cam xuc."""
     pattern = re.compile("|".join(re.escape(item) for item in EMOTICONS), re.IGNORECASE)
     return pattern.sub(lambda match: EMOTICONS[match.group().lower()], text)
 
 
 def replace_emojis(text: str) -> str:
+    """Doi emoji Unicode (😀...) thanh mo ta tieng Anh roi tach thanh cac tu rieng."""
     text = emoji.demojize(text, language="en")
     return text.replace(":", " ").replace("_", " ")
 
 
 def expand_abbreviations(text: str) -> str:
+    """Viet tat pho bien -> dang day du, dua vao dict ABBREVIATIONS."""
     pattern = re.compile(r"\b(" + "|".join(ABBREVIATIONS) + r")\b", re.IGNORECASE)
     return pattern.sub(lambda match: ABBREVIATIONS[match.group().lower()], text)
 
 
 def correct_spelling(text: str) -> str:
+    """Sua mot so loi chinh ta thuong gap, dua vao dict SPELLING_CORRECTIONS."""
     for wrong, right in SPELLING_CORRECTIONS.items():
         text = re.sub(rf"\b{re.escape(wrong)}\b", right, text, flags=re.IGNORECASE)
     return text
 
 
 def split_sentences(text: str) -> list[str]:
+    """Tach van ban thanh danh sach cau, dua vao dau .!? hoac xuong dong.
+
+    Phai goi truoc remove_punctuation vi ham do se xoa het dau cau.
+    """
     return [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+|\n+", text) if sentence.strip()]
 
 
 def remove_punctuation(text: str) -> str:
+    """Xoa dau cau, chi giu chu, so va khoang trang."""
     text = re.sub(r"[^\w\s]", " ", text, flags=re.UNICODE)
     return text.replace("_", " ")
 
@@ -111,10 +131,12 @@ def remove_numbers(text: str) -> str:
 
 
 def normalize_spaces(text: str) -> str:
+    """Gop nhieu khoang trang lien tiep thanh mot va cat khoang trang thua o dau/cuoi."""
     return re.sub(r"\s+", " ", text).strip()
 
 
 def normalize_tokens(tokens: list[str]) -> list[str]:
+    """Loc token: chuyen thuong, bo token 1 ky tu va token khong chua chu cai."""
     normalized = []
     for token in tokens:
         token = token.lower().strip()
@@ -122,6 +144,8 @@ def normalize_tokens(tokens: list[str]) -> list[str]:
             normalized.append(token)
     return normalized
 
+
+# === Xuat ket qua ===
 
 def clear_old_outputs(output_dir: Path, prefix: str) -> None:
     """Remove only old files generated for the current input filename."""
@@ -132,6 +156,7 @@ def clear_old_outputs(output_dir: Path, prefix: str) -> None:
 
 
 def save_frequency_csv(frequencies: list[tuple[str, int]], file_path: Path) -> None:
+    """Luu bang tan suat top tu ra file CSV (cot word, frequency)."""
     with file_path.open("w", newline="", encoding="utf-8-sig") as file:
         writer = csv.writer(file)
         writer.writerow(["word", "frequency"])
@@ -139,6 +164,7 @@ def save_frequency_csv(frequencies: list[tuple[str, int]], file_path: Path) -> N
 
 
 def save_frequency_chart(frequencies: list[tuple[str, int]], file_path: Path) -> None:
+    """Ve bieu do cot tan suat top tu va luu thanh anh PNG."""
     words, counts = zip(*frequencies)
     plt.figure(figsize=(12, 6))
     plt.bar(words, counts)
@@ -152,6 +178,11 @@ def save_frequency_chart(frequencies: list[tuple[str, int]], file_path: Path) ->
 
 
 def save_wordcloud(frequency_data: Counter, file_path: Path) -> None:
+    """Ve wordcloud tu toan bo tan suat tu va luu thanh anh PNG.
+
+    Dung font Arial (co dau tieng Viet) neu may co san; neu khong wordcloud
+    se tu dung font mac dinh (co the loi dau).
+    """
     font_path = Path("C:/Windows/Fonts/arial.ttf")
     wordcloud = WordCloud(
         width=1200,

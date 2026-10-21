@@ -1,0 +1,4 @@
+1. Token 'món' xuất hiện nhiều nhất (4 lần), cho thấy món ăn là nội dung được nhắc đến nhiều nhất trong các review.
+2. 'nhân_viên' và 'phục_vụ' cùng xuất hiện 2 và 2 lần; việc phục vụ là một chủ đề được đề cập thường xuyên.
+3. 'thực_đơn' xuất hiện 2 lần và 'nhanh' xuất hiện 2 lần, liên quan đến món ăn và tốc độ phục vụ.
+Ghi chú: dạng không dấu 'phuc vu' được tách thành 'phuc' (1 lần) và 'vu' (1 lần), nên được đếm riêng với token 'phục_vụ'.

@@ -1,0 +1,5 @@
+Nhan xet 1: Token 'phòng' co tan suat cao nhat (bang 4 lan), cho thay day la chu de/tu khoa duoc nhac toi nhieu nhat trong cac danh gia.
+
+Nhan xet 2: Cac token dung ngay sau la 'biển' (2 lan), 'khach' (2 lan), 'nhân_viên' (2 lan), cho thay day la nhung khia canh khac cung duoc nguoi dung quan tam ben canh chu de chinh o Nhan xet 1.
+
+(Nhan xet duoc sinh tu dong tu file tan_suat_top10.csv - khi doi du lieu/de bai, chi can chay lai toan bo notebook, khong can sua tay phan nay.)

@@ -1,0 +1,45 @@
+Làm theo 4 bước sau. Đề nào cũng áp dụng được, tổng cộng mất khoảng 10 phút trong giờ thi.
+
+Bước 1: Lấy số liệu (chạy 1 cell)
+Chạy cell này ngay sau ý d để có đủ số liệu cần viết:
+
+
+tong = len(tat_ca_token)
+so_khac_nhau = len(dem_tan_suat)
+so_tan_suat_1 = sum(1 for v in dem_tan_suat.values() if v == 1)
+print("Tổng token:", tong, "| Khác nhau:", so_khac_nhau,
+      "| Tần suất 1:", so_tan_suat_1, f"({so_tan_suat_1/so_khac_nhau:.0%})")
+
+# Mỗi token trong top 10 nằm ở review nào
+for tok, f in top10:
+    ids = [i for i, s in zip(df["id"], df["tokens"]) if tok in s.split()]
+    print(tok, f, ids)
+Bước 2: Chọn 2–4 ý để viết
+Loại nhận xét	Cách nhìn	Ví dụ
+1. Token đứng đầu (bắt buộc)	Token hạng 1: tần suất, gấp mấy lần hạng 2, chiếm bao nhiêu % tổng token, nằm ở review nào	món = 4, gấp đôi hạng 2, 4/66 ≈ 6,1%
+2. Nhóm tiếp theo (bắt buộc)	Các token cùng tần suất ở hạng 2: liệt kê hết, kèm ID review	nhanh, nhân_viên, phục_vụ, thực_đơn = 2
+3. Lỗi tiền xử lý (điểm cộng)	So buoc3.csv với reviews_raw.csv: từ nào bị tách sai, đếm thiếu hoặc đếm trùng	"Pvu" → phuc + vu, nên phục_vụ bị đếm thiếu
+4. Phân bố tần suất (điểm cộng)	Bao nhiêu % token chỉ xuất hiện 1 lần; các vị trí cuối top 10 có thật sự nổi bật không	92% token có tần suất 1; hạng 6–10 xếp theo chữ cái
+Muốn tìm lỗi tiền xử lý ở loại 3, xem 3 chỗ:
+
+Từ điển chuẩn hóa ra từ không dấu (khach san, phuc vu) thì bộ tách từ không ghép được thành từ ghép.
+Cùng một nghĩa nhưng thành 2 token khác nhau, ví dụ tot và tốt.
+Token bị ghép nhầm, ví dụ phong_đẹp, san_sao.
+Bước 3: Viết theo khung
+Nhận xét N: Token 'X' có tần suất n (xuất hiện ở ID1, ID2…), [so sánh: gấp đôi / chiếm x%]. Điều này cho thấy chủ đề X được nhắc tới nhiều nhất / lặp lại nhiều lần trong tập đánh giá.
+
+Mỗi nhận xét cần đủ 3 phần:
+
+Tên token, đặt trong ngoặc, viết đúng như trong CSV.
+Con số lấy từ tan_suat_top10.csv.
+Kết luận chỉ về tần suất hoặc chủ đề.
+Bước 4: Tự kiểm tra (đề có nói "không suy diễn cảm xúc")
+❌ Không viết	✅ Viết thay bằng
+"Khách hài lòng với phòng"	"Phòng là chủ đề được nhắc nhiều nhất"
+"Thái độ phục vụ tốt"	"Token 'nhân_viên' và 'phục_vụ' lặp lại 2 lần"
+"Nhà hàng cần cải thiện tốc độ"	"Token 'nhanh' xuất hiện ở NH01, NH04"
+"Chất lượng món ăn cao"	"Token 'món' đứng đầu với tần suất 4"
+Nhận xét không có số liệu	Luôn kèm tần suất hoặc ID review
+Nói ngắn gọn: chỉ nói từ nào xuất hiện bao nhiêu lần, ở đâu, và cho thấy chủ đề gì. Không nói khách thấy tốt hay xấu.
+
+Bài làm của bạn đã có mẫu hoàn chỉnh cho cả 4 loại, xem 1_de2/Cau2/nhan_xet.txt. Nếu thiếu thời gian, chỉ cần viết loại 1 và loại 2 là đủ yêu cầu "ít nhất 2 nhận xét".

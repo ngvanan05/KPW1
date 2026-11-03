@@ -1,0 +1,2 @@
+1. Token 'checkin' xuat hien nhieu nhat voi tan suat 4 lan, cho thay day la tu khoa noi bat nhat trong tap du lieu.
+2. Token 'hailong' xep thu hai voi tan suat 4 lan, cung thuoc nhom tu duoc nguoi dung de cap thuong xuyen trong danh gia.

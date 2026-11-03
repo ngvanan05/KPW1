@@ -13,7 +13,7 @@ Bài tập xếp theo chương. Trong mỗi chương, thư mục đánh số t�
 
 | Thư mục | Nội dung |
 |---|---|
-| `00_tong_hop/` | Bộ hàm dùng lại khi thi; cách viết nhận xét |
+| `00_tong_hop/` | Bộ hàm dùng lại khi thi; cách viết nhận xét; dự đoán đề cuối kỳ |
 | `C2_thu_thap_du_lieu/01_crawl_phan_trang_vnexpress.py` | Lấy link phân trang bằng regex và theo quy tắc URL |
 | `C2_thu_thap_du_lieu/02_crawl_agoda_khung_todo/` | Khung crawl Agoda, còn TODO selector để tự điền |
 | `C2_thu_thap_du_lieu/03_crawl_agoda_hoan_chinh/` | Bản crawl Agoda hoàn chỉnh và dữ liệu thu được |

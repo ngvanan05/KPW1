@@ -1,0 +1,8 @@
+Chương 5 sử dung tài liệu đã học giúp tôi giải bài dưới đây
+sử dung chung 1 bộ dữ lieu (475 file .txt chứa nội dung các đoạn văn bản, mỗi đoạn văn bản có các chủ đề khác nhau) gợi ý bỏ vào diction.. - có nên gửi file dữ lieu cho bạn không
+có 3 bài
+mỗi bài là 1 file jupyter
+bài a: chạy silhoet và elbow kết luận ra số K
+bài b: lấy số K đó đó chạy k mean
+kết quả cụm có những file nào giữ nguyên tên file
+bài c:đánh giá mức độ tương đồng 1 trong các thuật toán
